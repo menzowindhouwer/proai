@@ -77,7 +77,8 @@ public class CachedContent implements Writable {
                 line = reader.readLine();
             }
             if (!sawHeaderEnd) throw new ServerException("While parsing, never saw </header>");
-            String fixed = upToHeaderEnd.toString().replaceFirst("p>[^<]+<", "p>" + m_dateStamp + "<");
+            //String fixed = upToHeaderEnd.toString().replaceFirst("p>[^<]+<", "p>" + m_dateStamp + "<");
+            String fixed = upToHeaderEnd.toString();
 
             if (m_headerOnly) {
                 int headerStart = fixed.indexOf("<h");
